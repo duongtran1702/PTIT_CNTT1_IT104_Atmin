@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "ES6",                 // mỗi file tách scope
+    "module": "ES6",
     "moduleResolution": "node",
-    "outDir": "./dist",              // JS xuất ra dist/
-    "rootDir": "./src",              // chỉ build src/
+    "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
