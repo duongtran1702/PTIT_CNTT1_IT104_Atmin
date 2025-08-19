@@ -1,0 +1,61 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100vw;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 1fr 40px;
+  height: 100vh;   /* chiếm toàn bộ chiều cao màn hình */
+  width: 100vw;    /* chiếm toàn bộ chiều rộng màn hình */
+}
+
+.header {
+  grid-area: header;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  grid-area: menu;
+  background: #1e3a8a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  grid-area: main;
+  background: #f9f9f9;
+  overflow: auto; /* để nếu nội dung nhiều thì scroll */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  grid-area: footer;
+  background: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

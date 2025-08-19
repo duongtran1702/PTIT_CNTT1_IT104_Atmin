@@ -1,0 +1,38 @@
+.boxRed {
+    background-color: red;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxBlue {
+    background-color: blue;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxGreen {
+    background-color: green;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+    gap: 10px; /* khoảng cách giữa các box */
+}

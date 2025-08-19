@@ -1,0 +1,9 @@
+li {
+    margin: 0; /* bỏ margin ngoài */
+    padding: 0; /* bỏ padding trong */
+}
+
+ol {
+    margin: 0; /* bỏ margin ngoài */
+    padding: 0;
+}

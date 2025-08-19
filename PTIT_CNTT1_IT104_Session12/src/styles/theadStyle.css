@@ -1,0 +1,8 @@
+.tHead th {
+  background-color: rgb(235, 233, 233);
+  padding: 8px;
+  color: rgb(93, 91, 91);
+}
+tr{
+    width: 100%;
+}
