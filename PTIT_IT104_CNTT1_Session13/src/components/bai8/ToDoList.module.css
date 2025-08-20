@@ -1,0 +1,75 @@
+.item {
+    padding: 8px 0px;
+    margin: 0;
+    display: flex;
+    border-bottom: 1px solid black;
+}
+.stt {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+.name {
+    width: 120px;
+}
+.assign {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+}
+.status {
+    width: 140px;
+    display: flex;
+    justify-content: center;
+}
+.time {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+}
+.act {
+    width: 90px;
+    display: flex;
+    gap: 5px;
+}
+.container {
+    margin-top: 10px;
+}
+.delete {
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.edit {
+    color: white;
+    background-color: rgb(6, 200, 51);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.completed {
+    border: 1px solid rgb(249, 72, 72);
+    color: red;
+    background-color: rgb(255, 229, 229);
+    border-radius: 5px;
+    padding: 3px 2px;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+.incompleted {
+    border: 1px solid rgb(87, 249, 72);
+    color: rgb(15, 201, 9);
+    background-color: rgb(229, 255, 231);
+    border-radius: 5px;
+    padding: 3px 2px;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+.container{
+    width: fit-content;
+}
