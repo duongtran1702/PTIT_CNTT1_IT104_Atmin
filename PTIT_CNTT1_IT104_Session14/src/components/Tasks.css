@@ -1,0 +1,60 @@
+
+.container{
+    padding: 2%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid rgb(240, 238, 238);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+.taskInput{
+    width: 35rem;
+    padding: 1.5%;
+}
+.addBtn{
+    border: none;
+    background-color: rgb(60, 130, 243);
+    color: white;
+    border-radius: 3px;
+    width: 15%;
+     transition: all 0.3s ease;
+}
+.addBtn:hover {
+    background-color: rgb(30, 110, 230); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
+}
+
+.completedInfo{
+    text-align: left;
+    display: flex;
+    margin-right: auto;
+    margin-top: 3%;
+    background-color: rgb(230, 225, 225);
+    width: 37em;
+    padding: 2%;
+}
+.taskContainer{
+    margin-top: 2.5%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.errorMsg{
+    color: rgba(255, 0, 0, 0.775);
+    text-align: left;
+    display: flex;
+    margin-right: auto;
+
+}
+.completedAll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+    background-color: rgb(230, 225, 225);
+    width: 37em;
+    padding: 2%;
+}

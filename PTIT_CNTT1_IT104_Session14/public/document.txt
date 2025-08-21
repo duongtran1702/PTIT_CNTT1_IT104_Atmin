@@ -1,0 +1,36 @@
+🌀 Giải thích từng method bằng ví dụ thực tế
+1. constructor()
+
+👉 Dùng để khởi tạo state hoặc bind method.
+Ví dụ: bạn muốn userName ban đầu là tên mình.
+
+2. render()
+
+👉 Bắt buộc phải có, hiển thị giao diện.
+Ví dụ: hiện tên, nút bấm, dữ liệu API.
+
+3. componentDidMount()
+
+👉 Chạy 1 lần duy nhất sau khi component render lần đầu.
+💡 Thường dùng để gọi API.
+Ví dụ: bạn load danh sách sản phẩm từ server khi trang mở.
+
+4. shouldComponentUpdate()
+
+👉 Quyết định có cần re-render không.
+💡 Giúp tối ưu hiệu năng.
+Ví dụ: Nếu state không đổi, thì không cần render lại → tiết kiệm CPU.
+
+5. componentDidUpdate()
+
+👉 Chạy sau khi state hoặc props thay đổi.
+💡 Thường dùng để cập nhật dữ liệu khi có thay đổi.
+Ví dụ: sau khi count đổi, lưu nó vào localStorage.
+
+6. componentWillUnmount()
+
+👉 Chạy khi component bị xóa khỏi DOM.
+💡 Dùng để dọn dẹp (clear timer, remove event listener, hủy request API).
+Ví dụ: khi rời khỏi trang chat thì tắt kết nối WebSocket.
+
+Lifecycle giúp "điều khiển" Component trong từng giai đoạn sống của nó.
