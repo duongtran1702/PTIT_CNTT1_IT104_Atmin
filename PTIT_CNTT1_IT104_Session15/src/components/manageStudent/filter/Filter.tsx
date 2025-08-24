@@ -24,19 +24,26 @@ export default class Filter extends Component<Props> {
         const { search, sort } = this.props;
 
         return (
-            <div className="container-filter">
-                <select className="filter-form" value={sort} onChange={this.handleSort}>
-                    <option value="default">Mặc định</option>
-                    <option value="name">Sắp xếp theo tên</option>
-                    <option value="age">Sắp xếp theo tuổi</option>
-                </select>
-                <input
-                    className="search-form"
-                    type="text"
-                    placeholder="Tìm kiếm theo tên hoặc email"
-                    value={search}
-                    onChange={this.handleSearch}
-                />
+            <div className="container-1">
+                <div></div>
+                <div className="container-filter">
+                    <select
+                        className="filter-form"
+                        value={sort}
+                        onChange={this.handleSort}
+                    >
+                        <option value="default">Mặc định</option>
+                        <option value="name">Sắp xếp theo tên</option>
+                        <option value="age">Sắp xếp theo tuổi</option>
+                    </select>
+                    <input
+                        className="search-form"
+                        type="text"
+                        placeholder="Tìm kiếm theo tên hoặc email"
+                        value={search}
+                        onChange={this.handleSearch}
+                    />
+                </div>
             </div>
         );
     }
