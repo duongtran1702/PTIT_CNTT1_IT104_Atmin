@@ -1,0 +1,68 @@
+/* Overlay nền xám */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal form */
+.modal {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Form bên trong modal */
+.student-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.student-form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.student-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+.student-form button:hover {
+    background-color: #45a049;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 13px;
+}

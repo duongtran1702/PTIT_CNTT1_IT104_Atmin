@@ -1,0 +1,86 @@
+.item {
+    padding: 6px 0px;
+    margin: 0;
+    display: flex;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+.stt {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+.msv {
+    width: 120px;
+}
+.name {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+}
+.status {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+}
+.email {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+}
+.act {
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.container {
+    margin-top: 10px;
+}
+.delete {
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.edit {
+    color: white;
+    background-color: rgb(6, 200, 51);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.block {
+    color: white;
+    background-color: rgb(221, 11, 211);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.incompleted {
+    border: 1px solid rgb(249, 72, 72);
+    color: red;
+    background-color: rgb(255, 229, 229);
+    border-radius: 5px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    width: 115px;
+}
+.completed {
+    border: 1px solid rgb(87, 249, 72);
+    color: rgb(15, 201, 9);
+    background-color: rgb(229, 255, 231);
+    border-radius: 5px;
+    padding: 3px 2px;
+    display: flex;
+    justify-content: center;
+    width: 110px;
+    
+}
+.container{
+    width: fit-content;
+}
