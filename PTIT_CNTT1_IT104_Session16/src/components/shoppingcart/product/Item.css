@@ -1,0 +1,38 @@
+h4 {
+    margin: 0px;
+    text-align: center;
+}
+.cart-button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-product{
+    max-width: 200px;
+    height: 200px;
+}
+
+.item{
+    padding: 20px 10px;
+    box-shadow: 0 0 2px  gray;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    gap: 5px;
+}
+.price{
+     text-align: center;
+}

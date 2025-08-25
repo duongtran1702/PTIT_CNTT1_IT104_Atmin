@@ -1,0 +1,44 @@
+/* Toàn bộ khung Cart */
+.container-cart {
+    position: absolute;       /* bám vào phần tử cha (header/right) */
+    top: 30px;                /* nằm dưới icon giỏ hàng */
+    right: 0;                 /* dính mép phải */
+    background-color: #1a1a1a;
+    padding: 15px 10px;
+    width: 300px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);  /* tạo bóng cho nổi */
+}
+
+/* Phần tiêu đề (Cart) */
+.cart-top {
+    color: white;
+    font-size: 20px;
+    padding: 6px;
+    border-bottom: 1px solid gray;
+    font-weight: bold;
+}
+
+/* Danh sách sản phẩm trong Cart */
+.cart-main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 250px;     /* hạn chế chiều cao */
+    overflow-y: auto;      /* nếu nhiều sản phẩm thì scroll */
+}
+
+/* Phần tổng hoặc nút checkout */
+.cart-bot {
+    color: white;
+    padding: 12px 0 0;
+    border-top: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
