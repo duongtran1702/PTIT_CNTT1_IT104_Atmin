@@ -1,27 +1,40 @@
-import { useReducer } from 'react';
+import { useCallback, useEffect, useMemo, useReducer } from 'react';
 import { TaskContext } from './TaskContext';
 import TodoList from '../components/TodoList';
 import type { Task } from '../interfaces/task.interface';
 import { taskReducer } from '../reducers/taskReducer';
 
 export default function TaskContextProvider() {
-    const [tasks, dispatch] = useReducer(taskReducer, []);
+    const taskListLocal = localStorage.getItem('taskList');
+    const data = (taskListLocal && JSON.parse(taskListLocal)) || [];
+    const [tasks, dispatch] = useReducer(taskReducer, data);
 
-    const handleAddTask = (task: Task) => {
+    useEffect(
+        () => localStorage.setItem('taskList', JSON.stringify(tasks)),
+        [tasks]
+    );
+    const handleAddTask = useCallback((task: Task) => {
         dispatch({ type: 'ADD_TASK', payload: task });
-    };
+    }, []);
 
-    const handleUpdateTask = (id: number | string, name: string) => {
-        dispatch({ type: 'UPDATE_TASK', payload: { id, name } });
-    };
+    const handleUpdateTask = useCallback(
+        (id: number | string, name: string) => {
+            dispatch({ type: 'UPDATE_TASK', payload: { id, name } });
+        },
+        []
+    );
 
-    const handleDeleteTask = (id: number | string) => {
+    const handleDeleteTask = useCallback((id: number | string) => {
         dispatch({ type: 'DELETE_TASK', payload: { id } });
-    };
+    }, []);
 
-    const handleToggleTask = (id: number | string) => {
+    const handleToggleTask = useCallback((id: number | string) => {
         dispatch({ type: 'TOGGLE_TASK', payload: { id } });
-    };
+    }, []);
+    //useCallBack
+    const countTaskCompleted = useMemo(() => {
+        return tasks.filter((t: Task) => t.isCompleted).length;
+    }, [tasks]);
 
     return (
         <TaskContext.Provider
@@ -31,6 +44,7 @@ export default function TaskContextProvider() {
                 handleUpdateTask,
                 handleDeleteTask,
                 handleToggleTask,
+                countTaskCompleted,
             }}
         >
             <TodoList />

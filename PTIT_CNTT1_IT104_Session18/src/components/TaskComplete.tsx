@@ -1,17 +1,21 @@
-import type { listTask } from '../interfaces/listTasks.interface';
+import { useContext } from 'react';
+import { TaskContext } from '../context/TaskContext';
 
-export default function TaskComplete({ data }: listTask) {
-    const len1 = data.filter((t) => t.isCompleted === true).length;
-    const len2 = data.length;
+export default function TaskComplete() {
+    const context = useContext(TaskContext);
+    if (!context) throw new Error('Context k tồn tại');
+    const { countTaskCompleted, tasks } = context;
+
+    const len = tasks.length;
     return (
         <>
-            {len1 === 0 ? (
+            {countTaskCompleted === 0 ? (
                 <div className="text-center text-danger fw-medium">
                     Chưa có công việc nào hoàn thành
                 </div>
             ) : (
                 <div className="text-center text-success fw-medium">
-                    {len1}/ {len2} công việc đã hoàn thành
+                    {countTaskCompleted}/ {len} công việc đã hoàn thành
                 </div>
             )}
         </>

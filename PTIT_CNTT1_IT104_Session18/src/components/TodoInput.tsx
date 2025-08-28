@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 // import { taskReducer } from "../reducers/taskReducer";
 import type { Task } from '../interfaces/task.interface';
 import { TaskContext } from '../context/TaskContext';
@@ -6,6 +6,11 @@ import { TaskContext } from '../context/TaskContext';
 export default function TodoInput() {
     const [inputValue, setInputValue] = useState<string>('');
     const [isShowError, setIsShowError] = useState<boolean>(false);
+    //Create reference for input
+    const inputRef = useRef<HTMLInputElement | null>(null);
+    useEffect(() => {
+        if (inputRef) inputRef?.current?.focus();
+    }, []);
 
     // Gọi reducer
     // const [, dispatch] = useReducer(taskReducer, []);
@@ -46,8 +51,8 @@ export default function TodoInput() {
             //     type: 'ADD_TASK',
             //     payload: newTask,
             // });
-            
-            handleAddTask(newTask)
+
+            handleAddTask(newTask);
 
             setInputValue('');
             setIsShowError(false);
@@ -59,6 +64,7 @@ export default function TodoInput() {
         <>
             <form onSubmit={handleSubmitForm} className="d-flex mb-1">
                 <input
+                    ref={inputRef}
                     onChange={handleChangeInput}
                     value={inputValue}
                     type="text"

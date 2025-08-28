@@ -24,8 +24,8 @@ export default function TodoList() {
 
                 {/* Phần danh sách công việc */}
                 <TaskList />
-                
-                {len !== 0 ? <TaskComplete data={tasks} /> : <TaskEmpty />}
+
+                {len !== 0 ? <TaskComplete /> : <TaskEmpty />}
 
                 {/* Hiển thị công việc hoàn thành */}
 
