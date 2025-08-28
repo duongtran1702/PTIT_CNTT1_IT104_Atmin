@@ -1,17 +1,18 @@
-// import { useReducer } from "react";
-// import { taskReducer } from "../reducers/taskReducer";
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import type { Item } from '../interfaces/item.interface';
 import { TaskContext } from '../context/TaskContext';
 
 export default function TaskItem({ data }: Item) {
-    // const [, dispatch] = useReducer(taskReducer, []);
-
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [newName, setNewName] = useState(data.name);
     const context = useContext(TaskContext);
+    const inputRef = useRef<HTMLInputElement | null>(null);
 
-    if (!context) return null; // phòng trường hợp undefined
+    useEffect(() => {
+        if (inputRef.current && isModalOpen) inputRef?.current?.focus();
+    }, [isModalOpen]);
+
+    if (!context) return null;
     const { handleDeleteTask, handleToggleTask, handleUpdateTask } = context;
 
     // State modal
@@ -30,12 +31,6 @@ export default function TaskItem({ data }: Item) {
         }
     };
 
-    // const handleDelete = (id: number | string) => {
-    //     dispatch({
-    //         type: 'DELETE_TASK',
-    //         payload: { id: id },
-    //     });
-    // };
     return (
         <>
             <li className="list-group-item d-flex justify-content-between align-items-center">
@@ -78,7 +73,9 @@ export default function TaskItem({ data }: Item) {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        background: 'rgba(0,0,0,0.5)',
+                        // Gradient nền overlay
+                        background:
+                            'linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.7))',
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
@@ -87,15 +84,19 @@ export default function TaskItem({ data }: Item) {
                 >
                     <div
                         style={{
-                            background: 'white',
+                            // Card modal gradient
+                            background:
+                                'linear-gradient(145deg, #e0f7ff, #c0eaff)',
                             padding: '20px',
-                            borderRadius: '10px',
+                            borderRadius: '15px',
                             width: '300px',
-                            boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                            boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
+                            border: '1px solid #0d6efd', // optional viền gradient nữa cũng đẹp
                         }}
                     >
                         <h5>Chỉnh sửa công việc</h5>
                         <input
+                            ref={inputRef}
                             type="text"
                             value={newName}
                             onChange={(e) => setNewName(e.target.value)}
