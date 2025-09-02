@@ -1,5 +1,6 @@
 import './App.css';
 import Counter from './components/Counter';
+import FeedBackApp from './components/feedbackapp/FeedBackApp';
 import FocusInput from './components/FocusInput';
 import InputField from './components/InputField';
 import PageTitle from './components/PageTitle';
@@ -19,6 +20,7 @@ function App() {
             <FocusInput />
             <Counter />
             <UserForm />
+            <FeedBackApp/>
         </>
     );
 }
