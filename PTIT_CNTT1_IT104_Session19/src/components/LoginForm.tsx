@@ -40,7 +40,7 @@ function reducer(state: State, action: Action): State {
 function fakeAuthAPI(username: string, password: string): Promise<string> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (username === 'admin' && password === '1234') {
+            if (username === 'admin' && password === '12345678') {
                 resolve('Đăng nhập thành công! 🎉');
             } else {
                 reject('Sai tên đăng nhập hoặc mật khẩu 😢');
