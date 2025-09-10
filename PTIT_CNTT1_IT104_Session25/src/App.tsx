@@ -139,7 +139,8 @@ function App() {
                         index
                         element={<Navigate to="not-found" replace />}
                     />
-                    <Route path="not-found" element={<NotFound />} />
+
+                    <Route path="*" element={<NotFound />} />
                 </Route>
 
                 <Route path="/bai6" element={<Bai6 />}>

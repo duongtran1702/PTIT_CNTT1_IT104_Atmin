@@ -4,7 +4,7 @@ export default function Bai1() {
     return (
         <div>
             <nav style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-                <NavLink to="/bai1" style={{ textDecoration: 'none' }}>
+                <NavLink to="/bai1" >
                     Home
                 </NavLink>
                 <NavLink to="/bai1/about" style={{ textDecoration: 'none' }}>
