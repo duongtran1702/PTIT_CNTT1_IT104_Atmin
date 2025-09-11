@@ -1,5 +1,5 @@
 import { Button, Card, Form, Input, Typography, message } from 'antd';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 const { Title, Text } = Typography;
