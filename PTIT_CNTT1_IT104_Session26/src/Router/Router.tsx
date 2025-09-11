@@ -9,21 +9,11 @@ import { Account } from '../components/Account';
 import { Teams } from '../components/Teams';
 import { TeamsIndex } from '../components/TeamsIndex';
 import { Team } from '../components/Team';
-import { lazy, Suspense, type JSX } from 'react';
+import { lazy, Suspense } from 'react';
 import { Spin } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 
-const LazyLoadComp = lazy(
-    () =>
-        new Promise<{ default: React.ComponentType<JSX.IntrinsicAttributes> }>(
-            (resolve) => {
-                setTimeout(
-                    () => resolve(import('../components/LazyLoadComp')),
-                    1000
-                );
-            }
-        )
-);
+const LazyLoadComp = lazy(() => import('../components/LazyLoadComp'));
 
 export const routers = createBrowserRouter([
     {

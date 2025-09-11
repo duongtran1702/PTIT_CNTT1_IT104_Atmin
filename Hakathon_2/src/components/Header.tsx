@@ -14,8 +14,9 @@ export default function Header({ onAdd }: PropTypeHeader) {
     useEffect(() => {
         if (content === '') setShowError(true);
         else setShowError(false);
-    },[content]);
+    }, [content]);
     const addContent = () => {
+        if (!content) return;
         onAdd(content);
         setContent('');
     };
