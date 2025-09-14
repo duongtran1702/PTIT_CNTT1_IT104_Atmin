@@ -1,0 +1,19 @@
+Step 1. Định nghĩa kiểu dữ liệu cho callback
+→ Dùng type trong TypeScript để mô tả hàm callback nhận tham số gì và trả về gì.
+
+Step 2. Viết hàm chính (main function)
+→ Hàm nhận tham số cần thiết + callback.
+→ Thực hiện logic (tính toán / delay / xử lý dữ liệu).
+→ Gọi callback(...).
+
+Step 3. Viết callback cụ thể
+→ Tạo một hàm theo đúng kiểu đã định nghĩa.
+→ Thường dùng để console.log hoặc xử lý kết quả.
+
+Step 4. (Nếu bất đồng bộ) Bọc hàm chính trong Promise
+→ Trả về Promise.
+→ Dùng setTimeout hoặc thao tác async khác trước khi gọi callback.
+
+Step 5. Gọi hàm điều khiển (controller function)
+→ Nếu bất đồng bộ: dùng async/await để chờ hoàn thành.
+→ Nếu đồng bộ: gọi trực tiếp.
