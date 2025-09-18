@@ -20,8 +20,8 @@ import {
     ShareAltOutlined,
 } from '@ant-design/icons';
 import type { Post } from '../../interfaces/post.interface';
-import axios from 'axios';
 import debounce from 'lodash.debounce';
+import { apiClient } from '../../utils/apiClient';
 
 const { Option } = Select;
 
@@ -47,9 +47,7 @@ export default function PostList() {
     const [searchKeyword, setSearchKeyword] = useState('');
     const [statusFilter, setStatusFilter] = useState('all');
 
-    const api = axios.create({
-        baseURL: 'http://localhost:3000',
-    });
+    
 
     // GET all posts
     const fetchAllPost = useCallback(
@@ -62,7 +60,7 @@ export default function PostList() {
                 if (keyword) params.q = keyword;
                 if (status !== 'all') params.status = status;
 
-                const res = await api.get(`/posts`, { params });
+                const res = await apiClient.get(`/posts`, { params });
                 setPosts(res.data);
                 setTotal(
                     Number(res.headers['x-total-count']) || res.data.length
@@ -72,12 +70,12 @@ export default function PostList() {
                 message.error('Không thể tải danh sách bài viết');
             }
         },
-        [pageSize, api] // 👈 dependency thật sự cần thiết
+        [pageSize]
     );
 
     useEffect(() => {
         fetchAllPost(currentPage, searchKeyword, statusFilter);
-    }, [currentPage, searchKeyword, statusFilter, fetchAllPost]);
+    }, [currentPage, searchKeyword, statusFilter,fetchAllPost]);
 
     const handleSearch = useMemo(
         () =>
@@ -92,14 +90,14 @@ export default function PostList() {
     const handleSubmit = async (values: Post) => {
         try {
             if (editingPost) {
-                await api.put(`/posts/${editingPost.id}`, {
+                await apiClient.put(`/posts/${editingPost.id}`, {
                     ...editingPost,
                     ...values,
                     content: value,
                 });
                 message.success('Cập nhật thành công');
             } else {
-                await api.post(`/posts`, {
+                await apiClient.post(`/posts`, {
                     ...values,
                     content: value,
                     status: 'draft',
@@ -123,15 +121,15 @@ export default function PostList() {
         if (!confirmAction.post || !confirmAction.type) return;
         try {
             if (confirmAction.type === 'delete') {
-                await api.delete(`/posts/${confirmAction.post.id}`);
+                await apiClient.delete(`/posts/${confirmAction.post.id}`);
                 message.success('Xóa thành công');
             } else if (confirmAction.type === 'block') {
-                await api.patch(`/posts/${confirmAction.post.id}`, {
+                await apiClient.patch(`/posts/${confirmAction.post.id}`, {
                     status: 'draft',
                 });
                 message.success('Đã chặn bài viết');
             } else if (confirmAction.type === 'unblock') {
-                await api.patch(`/posts/${confirmAction.post.id}`, {
+                await apiClient.patch(`/posts/${confirmAction.post.id}`, {
                     status: 'published',
                 });
                 message.success('Đã bỏ chặn bài viết');
