@@ -10,7 +10,7 @@ import {
     Modal,
     message,
 } from 'antd';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const { Text } = Typography;
 
@@ -24,17 +24,14 @@ export const YourCart = () => {
     // Quản lý số lượng local (local state) để input number tăng giảm
     const [manageBuy, setManageBuy] = useState<BuyItem[]>([]);
 
-    // Khi cart thay đổi, cập nhật manageBuy
     useEffect(() => {
         setManageBuy((prev) => {
-            // Nếu số lượng sản phẩm giống nhau và id giống nhau, giữ nguyên manageBuy
             if (
                 prev.length === cart.length &&
                 prev.every((item, idx) => item.id === cart[idx].id)
             ) {
-                return prev;
+                return prev; // cart “giống nhau” → giữ manageBuy
             }
-            // Nếu khác, cập nhật lại manageBuy từ cart
             return cart.map((p) => ({ id: p.id, quantity: p.sell }));
         });
     }, [cart]);
