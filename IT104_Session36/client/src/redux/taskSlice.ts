@@ -62,7 +62,6 @@ const taskSlice = createSlice({
             .addCase(
                 searchTasks.fulfilled,
                 (state, action: PayloadAction<Task[]>) => {
-                    state.status = 'success';
                     state.data = action.payload; 
                 }
             );
