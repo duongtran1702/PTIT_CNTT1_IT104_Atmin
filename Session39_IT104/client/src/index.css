@@ -1,0 +1,51 @@
+/* UploadMultipleFiles.css
+   Styles riêng cho component UploadMultipleFiles
+   (Nếu project dùng CSS Modules đổi tên thành UploadMultipleFiles.module.css và import tương ứng)
+*/
+
+.upload-container {
+    padding: 20px;
+}
+
+.grid {
+    margin-top: 20px;
+}
+
+/* Card wrapper để đặt image + overlay + nút xóa */
+.card-image-wrapper {
+    position: relative;
+}
+
+/* Ảnh hiển thị: bắt kích thước cố định và cover */
+.image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay khi đang upload (semi-transparent) */
+.spinner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nút xóa vị trí góc phải trên */
+.remove-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+}
+
+/* Nút upload tất cả */
+.upload-all-button {
+    margin-top: 20px;
+}

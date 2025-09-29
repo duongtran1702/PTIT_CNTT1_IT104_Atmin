@@ -1,11 +1,11 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "Clean Code",
-      "author": "Robert C. Martin",
+      "title": "Clean Code ",
+      "author": "Atmin",
       "year": 2008,
-      "category": "Programming"
+      "category": "Programming",
+      "id": 1
     },
     {
       "id": 2,
@@ -69,6 +69,13 @@
       "year": "2025",
       "category": "Stories",
       "id": 229
+    },
+    {
+      "title": "Hello World",
+      "author": "My Day",
+      "year": "2025",
+      "category": "Me",
+      "id": 783
     }
   ]
 }
